@@ -114,6 +114,7 @@ export default class AI extends Player {
   magicAICreateUnit() {
     if (!this.isCanCreate()) return;
     if (this.fireMode === FIRE_MODE.PHARAOH) {
+      let canCreateUnits = getCanCreateUnits(this);
       const createMaxUnitList = MAGIC_UNIT_MODE[this.fireMode]
       canCreateUnits = canCreateUnits.filter(item => item.count > 0)
       canCreateUnits = canCreateUnits.sort((a, b) => {
